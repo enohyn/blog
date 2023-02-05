@@ -12,8 +12,11 @@ const PostList = () => {
   };
 
   useEffect(() => {
-    fetchPosts();
-  }, []);
+    if (posts != null) {
+      fetchPosts();
+    }
+
+  }, [posts]);
 
   const renderedPosts = Object.values(posts).map((post) => {
     return (
